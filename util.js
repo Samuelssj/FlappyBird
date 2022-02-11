@@ -42,12 +42,10 @@ class Obj{
 
 
     Collide(obj){
-
         if(this.x < obj.x + obj.width &&
            this.x + this.width > obj.x &&
-           this.y <obj.y + obj.heigth &&
-           this.y +this.heigth > obj.y){
-
+           this.y < obj.y + obj.heigth &&
+           this.y + this.heigth > obj.y){
             return true;
         }else{
 
@@ -58,6 +56,21 @@ class Obj{
 
 }
 
+class Texto{
+
+    text = "";
+
+    draw_text(size,font,x,y,cor){
+        canvas.font = size + "px" + " " + font;
+        canvas.fillStyle = cor;
+        canvas.fillText(this.text, x, y);
+    }
+
+
+}
+
+
+ 
 class Bg extends Obj{
     move(speed,limit,pos){
         this.x -=speed;
@@ -115,7 +128,7 @@ class Coin extends Obj{
         this.x = pipe.x + 25;
         this.y = pipe.y - 130;
 
-        if(this.x < -20){
+        if(this.x < -50){
             this.set_visible = true;
         }
 
@@ -123,3 +136,4 @@ class Coin extends Obj{
 
 
 }
+
