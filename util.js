@@ -42,6 +42,7 @@ class Obj{
 
 
     Collide(obj){
+        
         if(this.x < obj.x + obj.width &&
            this.x + this.width > obj.x &&
            this.y < obj.y + obj.heigth &&

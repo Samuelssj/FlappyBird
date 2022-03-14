@@ -5,8 +5,8 @@ var bg2 = new Bg(500,0,500,900,"assets/images/sky.png")
 var ground = new Ground(0 ,600,500,200,"assets/images/ground.png")
 var ground2 = new Ground(500 ,600,500,200,"assets/images/ground.png")
 
-var pipe1 = new Pipe(500,400,96,358, "assets/images/pipe1.png");
-var pipe2= new Pipe(500,-100,96,358, "assets/images/pipe2.png");
+var pipe1 = new Pipe(500,500,96,358, "assets/images/pipe1.png");
+var pipe2= new Pipe(500,0,96,358, "assets/images/pipe2.png");
 
 var bird = new Bird(50,400,63,51,"assets/images/bird0.png")
 
@@ -30,17 +30,13 @@ function colision(){
             coin.set_visible= false;
             score +=1;
             somcoin.play(); 
-        }
-        
-        }
+        }}
         
         if(bird.Collide(pipe1) || bird.Collide(pipe2)){
-            sombatercano.play();
-            somfase.pause();
             play = false;
+             sombatercano.play();
+            somfase.pause();
          
-            
-
             }
         
 }
@@ -78,7 +74,6 @@ pipe1.move(3,-100,600, pipe2);
 
 coin.move(pipe1);
 coin.animation("coin", 5, 7);
-
 score_texto.text = score;
 
 colision();
