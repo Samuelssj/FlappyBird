@@ -2,6 +2,8 @@ body {
   margin: 0px;
   padding: 0px;
   background-color: #3b3b3b;
+
+
 }
 canvas {
   margin: auto;
@@ -11,4 +13,9 @@ canvas {
   right: 0%;
   bottom: 0%;
   background-color: #4b4b4b;
+  width:99.9vw;
+  height: 99.9vh;;
+
+
 }
+
