@@ -1,9 +1,9 @@
 
 // var can = document.querySelector('canvas')
 // var canvasLarguras = window.getComputedStyle(can);
-
-var bg = new Bg(0,0,500,900,"assets/sky.png")
-var bg2 = new Bg(500,0,500,900,"assets/sky.png")
+var play = true;
+var bg = new Bg(0,0,502,900,"assets/sky.png")
+var bg2 = new Bg(500,0,502,900,"assets/sky.png")
 
 var ground = new Ground(0 ,700,500,200,"assets/ground.png")
 var ground2 = new Ground(500 ,700,500,200,"assets/ground.png")
@@ -14,11 +14,9 @@ var ground2 = new Ground(500 ,700,500,200,"assets/ground.png")
 var passaro = new Passaro(50,400,30,35,"assets/bird0.png")
 
 // var coin = new Coin(50,50,45,65, "assets/images/coin3.png");
-
 // var score = 0;
 // var score_texto = new Texto();
 
-// var play = true;
 
 // var somFly = new Audio("assets/sounds/wing.ogg");
 // var somcoin = new Audio("assets/sounds/point.ogg");
@@ -62,16 +60,16 @@ function draw(){
 }
 
 function update(){
-// if(play){
+ if(play){
 bg.move(1,-500,0); 
 bg2.move(1,0,500);
 // somfase.play();
 ground.move(2,-500,0);
 ground2.move(2,0,500);
 
-// Passaro.move();
+//passaro.move();
 // bird.limiteVoo(); 
-// bird.animation("bird", 4, 8);
+passaro.animation("bird", 4, 8);
 
 // pipe1.move(3,-100,600, pipe2);
 
@@ -81,7 +79,7 @@ ground2.move(2,0,500);
 
 // colision();
 
-// }
+}
 
 
 }

@@ -26,17 +26,18 @@ class Obj{
 
 
     animation(nome, limit, vel){
+        //tempo de animação
         this.timer += 1;
         if(this.timer >= vel){
             this.timer = 0;
             this.frame += 1;
         }
-
+        //quantas imagens temos
         if(this.frame >= limit){
             this.frame = 0;
         }
         
-        this.image = "assets/images/" + nome + this.frame + ".png";
+        this.image = "assets/" + nome + this.frame + ".png";
 
     }
 
