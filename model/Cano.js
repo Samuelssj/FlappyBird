@@ -4,6 +4,7 @@ class Cano extends Obj{
         this.x -= vel;
         if(this.x <= limit){
             this.x = newPos;
+            //posições dos canos
             this.y = Math.random() * (600 - 450) + 400;
         }
         pipebaixo.x = this.x;

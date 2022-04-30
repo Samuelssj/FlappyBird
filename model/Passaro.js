@@ -14,6 +14,7 @@ class Passaro extends Obj{
         if(this.y >= 666){
             this.y = 666;
         }
+        //limite do teto
         else if(this.y <= 0){
             this.y = 0;
         }

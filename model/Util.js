@@ -76,19 +76,5 @@ class Texto{
 
 
 
-class Coin extends Obj{
 
-    move(pipe){
-
-        this.x = pipe.x + 25;
-        this.y = pipe.y - 130;
-
-        if(this.x < -50){
-            this.set_visible = true;
-        }
-
-    }
-
-
-}
 
