@@ -14,7 +14,7 @@ var cano2= new Cano(500,0,60,358, "assets/pipe2.png");
 
 var passaro = new Passaro(50,400,30,35,"assets/bird0.png")
 
-var moeda = new Moeda(50,50,45,65, "assets/coin3.png");
+var moeda = new Moeda(520, Math.random() * (645 - 45),45,65, "assets/coin3.png");
 var score = 0;
 var score_texto = new Texto();
 
@@ -66,7 +66,7 @@ function update(){
    
     fundo.move(1,-500,0); 
     fundo2.move(1,0,500);
-    //somfase.play();
+    somfase.play();
     chao.move(2,-500,0);
     chao2.move(2,0,500);
 
@@ -80,7 +80,7 @@ function update(){
     moeda.animation("coin", 6,8);
     score_texto.text = score;
 
-//colision();
+colision();
 
 }
 

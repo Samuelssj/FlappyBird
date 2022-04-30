@@ -41,7 +41,6 @@ class Obj{
 
     }
 
-
     Collide(obj){
         
         if(this.x < obj.x + obj.width &&
