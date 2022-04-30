@@ -1,3 +1,3 @@
-class Ground extends Bg{
+class Chao extends Fundo{
 
 }

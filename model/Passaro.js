@@ -10,9 +10,9 @@ class Passaro extends Obj{
     }
 
     limiteVoo(){
-
-        if(this.y >= 560){
-            this.y = 560;
+        //Limite de queda
+        if(this.y >= 666){
+            this.y = 666;
         }
         else if(this.y <= 0){
             this.y = 0;
