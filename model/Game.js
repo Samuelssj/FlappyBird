@@ -14,7 +14,9 @@ var cano2= new Cano(500,0,60,358, "assets/pipe2.png");
 
 var passaro = new Passaro(50,400,30,35,"assets/bird0.png")
 
-var moeda = new Moeda(520, Math.random() * (645 - 45),45,65, "assets/coin3.png");
+var moeda = new Moeda( Math.random() * (645 - 520), Math.random() * (645 - 45),45,65, "../assets/true0.png");
+var moeda2 = new Moeda( Math.random() * (645 - 45), Math.random() * (645 - 45),45,65, "../assets/false0.png");
+
 var score = 0;
 var score_texto = new Texto();
 
@@ -31,8 +33,16 @@ function colision(){
         if(moeda.set_visible){
             moeda.set_visible= false;
             score +=1;
-            somcoin.play(); 
+            somcoin.play();  
         }}
+
+        if(passaro.Collide(moeda2)){
+            if(moeda2.set_visible){
+                moeda2.set_visible= false;
+                score +=1;
+                somcoin.play(); 
+            }}
+            
         
         if(passaro.Collide(cano1) || passaro.Collide(cano2)){
             play = false;
@@ -56,6 +66,7 @@ function draw(){
     
     passaro.draw();
     moeda.draw();
+    moeda2.draw();
 
     score_texto.draw_text(60,"Arial", 225, 100, "white");
     
@@ -77,7 +88,10 @@ function update(){
     cano1.move(3,-100,600, cano2);
 
     moeda.move(cano1);
-    moeda.animation("coin", 6,8);
+    moeda.animation("true", 6,8);
+
+    moeda2.move(cano1);
+    moeda2.animation("false", 6,8);
     score_texto.text = score;
 
 colision();
@@ -95,4 +109,4 @@ requestAnimationFrame(main);
 
 }
 
-main();
+main(); 
