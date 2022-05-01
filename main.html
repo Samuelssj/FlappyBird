@@ -29,10 +29,10 @@
             color: white;
         }
 
-        #menu-card {
+        #container-menu {
             background-image: url("assets/elements/level_select/bg.png");
-            background-size: contain;
-            background-repeat: no-repeat;
+            background-size: cover;
+            background-repeat: round;
             padding: 2rem;
         }
 
@@ -43,7 +43,7 @@
         }
 
         #title {
-            top:0;
+            top: 0;
             color: white;
             background-image: url("assets/elements/match3/up.png");
             background-size: contain;
@@ -53,38 +53,28 @@
             height: 10%;
         }
 
-        #font{
+        #font {
             font-family: 'Walter Turncoat', cursive;
             font-size: 4vw;
         }
+
 
     </style>
 </head>
 
 <body class="vw-100 vh-100 d-flex justify-content-center align-items-center">
 
-    <div id="menu-card">
-        <div id="container-button" class="d-flex justify-content-center align-items-center" onclick="moveTo('game')">
-            <label>Jogar</label>
-            <input src="assets/ui/Button11.png" type="image">
-        </div>
-        <div id="container-button" class="d-flex justify-content-center align-items-center" onclick="alert('Ajuda')">
-            <label>Ajuda</label>
-            <input src="assets/ui/Button12.png" type="image">
-        </div>
-        <div id="container-button" class="d-flex justify-content-center align-items-center" onclick="alert('Opções')">
-            <label>Opções</label>
-            <input src="assets/ui/Button13.png" type="image">
-        </div>
-        <div id="container-button" class="d-flex justify-content-center align-items-center" onclick="alert('Créditos')">
-            <label>Créditos</label>
-            <input src="assets/ui/Button15.png" type="image">
-        </div>
+    <div id="container-menu" class="">
+        
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
+
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 
     <script>
 
@@ -93,6 +83,11 @@
             window.location.href = `${page}.html`
         }
 
+        const changeScreen = (page="login") => {
+            $("#container-menu").load(`${page}.html`);
+        }
+
+        changeScreen();
     </script>
 </body>
 
