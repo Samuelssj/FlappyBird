@@ -37,7 +37,7 @@ class Obj{
             this.frame = 0;
         }
         
-        this.image = "assets/" + nome + this.frame + ".png";
+        this.image = "../assets/" + nome + this.frame + ".png";
 
     }
 

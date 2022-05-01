@@ -1,0 +1,45 @@
+<h1 style="color: white; text-align: center; margin-bottom: 1rem;">
+    Opções
+</h1>
+
+<h2 style="color: white; text-align: center;margin-bottom: 1rem;">
+    Aúdio
+</h2>
+
+<div class="d-flex justify-content-center align-items-center mb-4">
+    <input src="../assets/elements/btn/sound_off.png" type="image" style="width: 5rem;" title="Áudio Desligado"
+        id="audio-input" onclick="handleAudio()">
+</div>
+
+<h3 style="color: white; text-align: center;">
+    Dificuldade
+</h3>
+
+
+<input src="../assets/ui/Number01.png" type="image" title="Nível de dificuldade 1" name="input-level" id='1'
+    onclick="handleLevel('1')">
+<input src="../assets/ui/Number14.png" type="image" title="Nível de dificuldade 2" name="input-level" id='2'
+    onclick="handleLevel('2')">
+<input src="../assets/ui/Number09.png" type="image" title="Nível de dificuldade 3" name="input-level" id='3'
+    onclick="handleLevel('3')">
+
+
+<div id="container-button" class="d-flex justify-content-center align-items-center" onclick="changeScreen('menu')">
+    <label>Voltar</label>
+    <input src="../assets/ui/Button17.png" type="image">
+</div>
+
+
+<script> 
+
+    if (getOrCreate("flappy-bird-sound", true)){
+        let audioInput = document.getElementById("audio-input")
+
+        audioInput.title = "Áudio Ligado"
+        audioInput.src = "../assets/elements/btn/sound.png"
+    }
+
+    handleLevel(String(getOrCreate("flappy-bird-level", "1")));
+
+
+</script>
