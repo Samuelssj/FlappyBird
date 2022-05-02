@@ -6,22 +6,22 @@ const missoes = [
     missao01 ={
         //e
         pergunta : "1 ^⬜= Verdadeiro" ,
-        resposta : "true",
+        resposta : 1,
     },
     missao02 ={
         //ou
         pergunta : "0 V⬜= Verdadeiro" ,
-        resposta : "true",
+        resposta : 1,
     },
     missao03 ={
         //negacao
-        pergunta : "0 ~⬜= Verdadeiro" ,
-        resposta : "true",
+        pergunta : "0 ~ = Verdadeiro" ,
+        resposta : 1,
     },
     missao04 ={
         //condicional
         pergunta : "1 ->⬜ = falso" ,
-        resposta : "false",
+        resposta : 0,
     },
 
 ];

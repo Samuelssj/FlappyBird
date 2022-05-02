@@ -17,11 +17,10 @@ var passaro = new Passaro(50, 400, 30, 35, "../assets/bird0.png")
 var moeda = new Moeda(Math.random() * (645 - 520), Math.random() * (645 - 45), 45, 65, "../assets/true0.png");
 var moeda2 = new Moeda(Math.random() * (645 - 45), Math.random() * (645 - 45), 45, 65, "../assets/false0.png");
 
-var moedaResposta = false;
-var respostaMissao = false;
-
+var moedaResposta = 0;
+var respostaMissao = missaoResposta;
 var score = 0;
-var missaoAtual = missaoNome
+var missaoAtual = missaoNome;
 
 var missao_Label = new Texto();
 var missao_texto = new Texto();
@@ -34,21 +33,45 @@ var somfase = new Audio("../assets/Bubble.mp3");
 var sombatercano = new Audio("../assets/UhOh.mp3");
 var gamerover = new Texto();
 
+function resposta(){
+
+    if(moedaResposta === missaoResposta){
+        score += 1;
+        playSound(somcoin);
+        criarmissao();
+        respostaMissao = missaoResposta;
+        missaoAtual = missaoNome;
+    }else{
+        if(score > 0){
+            score -= 1;
+        }
+        playSound(sombatercano)
+        // criarmissao();
+        // respostaMissao = missaoResposta;
+        // missaoAtual = missaoNome;
+    }
+
+
+}
+
+
 function colision() {
+
 
     if (passaro.Collide(moeda)) {
         if (moeda.set_visible) {
             moeda.set_visible = false;
-            score += 1;
-            playSound(somcoin);
+            moedaResposta = 1;
+            resposta();
         }
     }
 
     if (passaro.Collide(moeda2)) {
         if (moeda2.set_visible) {
             moeda2.set_visible = false;
-            score += 1;
-            playSound(somcoin);
+            moedaResposta = 0;
+            resposta();
+
         }
     }
 
@@ -105,7 +128,6 @@ function update() {
         moeda2.animation("false", 6, 8);
 
         missao_texto.text = missaoAtual;
-
         score_texto.text = score;
 
        colision();
