@@ -17,7 +17,14 @@ var passaro = new Passaro(50, 400, 30, 35, "../assets/bird0.png")
 var moeda = new Moeda(Math.random() * (645 - 520), Math.random() * (645 - 45), 45, 65, "../assets/true0.png");
 var moeda2 = new Moeda(Math.random() * (645 - 45), Math.random() * (645 - 45), 45, 65, "../assets/false0.png");
 
+var moedaResposta = false;
+var respostaMissao = false;
+
 var score = 0;
+var missaoAtual = missaoNome
+
+var missao_Label = new Texto();
+var missao_texto = new Texto();
 var score_texto = new Texto();
 
 
@@ -70,7 +77,9 @@ function draw() {
     moeda.draw();
     moeda2.draw();
 
-    score_texto.draw_text(60, "Arial", 225, 100, "black");
+    missao_Label.draw_text("Missão:",20, "Arial", 0, 30, "black");
+    missao_texto.draw_text("",30, "Arial", 10, 80, "black");
+    score_texto.draw_text("Placar ",30, "Arial", 340, 80, "black");
 
 }
 
@@ -94,9 +103,12 @@ function update() {
 
         moeda2.move(cano1);
         moeda2.animation("false", 6, 8);
+
+        missao_texto.text = missaoAtual;
+
         score_texto.text = score;
 
-        colision();
+       colision();
 
     }
 
