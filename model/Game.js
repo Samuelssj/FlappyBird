@@ -79,7 +79,7 @@ function update() {
 
         fundo.move(1, -500, 0);
         fundo2.move(1, 0, 500);
-       // playSound(somfase)
+        playSound(somfase)
         chao.move(2, -500, 0);
         chao2.move(2, 0, 500);
 
@@ -96,7 +96,7 @@ function update() {
         moeda2.animation("false", 6, 8);
         score_texto.text = score;
 
-       // colision();
+        colision();
 
     }
 
