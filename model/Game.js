@@ -18,7 +18,7 @@ var moeda = new Moeda(Math.random() * (520 - 50), Math.random() * (645 - 45), 45
 var moeda2 = new Moeda(Math.random() * (520 - 50), Math.random() * (645 - 45), 45, 65, "../assets/false0.png");
 
 var moedaIco = new Moeda(0,750, 50, 50, "../assets/true2.png");
-var moedaIco2 = new Moeda(0,830, 50, 50, "../assets/false2.png");
+var moedaIco2 = new Moeda(0,810, 50, 50, "../assets/false2.png");
 var moeda_Label = new Texto();
 var moeda_Label2 = new Texto();
 
@@ -146,7 +146,7 @@ var game = {
         score_texto.draw_text("Placar ",30, "Arial Bold", 380, 90, "black");
 
         moeda_Label.draw_text("➔ 1 ➔ Verdadeiro",30, "Arial Bold",50, 785, "black");
-        moeda_Label2.draw_text("➔ 0 ➔ Falso",30, "Arial Bold",50, 860, "black");
+        moeda_Label2.draw_text("➔ 0 ➔ Falso",30, "Arial Bold",50, 845, "black");
 
 
     
@@ -175,7 +175,7 @@ var game = {
             missao_texto.text = missaoAtual;
             score_texto.text = score;
     
-           colision();
+          // colision();
     
         }
     
