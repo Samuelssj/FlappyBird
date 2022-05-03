@@ -1,5 +1,5 @@
 class Passaro extends Obj{
-    vel = 2
+    vel = 1
     grav = .5
 
     move(){
