@@ -17,6 +17,10 @@ var passaro = new Passaro(50, 400, 30, 35, "../assets/bird0.png")
 var moeda = new Moeda(Math.random() * (645 - 520), Math.random() * (645 - 45), 45, 65, "../assets/true0.png");
 var moeda2 = new Moeda(Math.random() * (645 - 45), Math.random() * (645 - 45), 45, 65, "../assets/false0.png");
 
+var moedaIco = new Moeda(0,750, 50, 50, "../assets/true2.png");
+var moedaIco2 = new Moeda(0,830, 50, 50, "../assets/false2.png");
+var moeda_Label = new Texto();
+var moeda_Label2 = new Texto();
 
 var moedaResposta = 0;
 var respostaMissao = missaoResposta;
@@ -59,9 +63,6 @@ function resposta(){
     }
 
  
-
-
-
     // if(moedaResposta === missaoResposta){
     //     score += 1;
     //     playSound(somcoin);
@@ -108,7 +109,7 @@ function colision() {
         playSound(sombatercano);
         somfase.pause();
 
-        window.location.href = "http://127.0.0.1:5500/views/main.html";
+        window.location.href = "http://127.0.0.1:5500/views/game.html";
 
 
     }
@@ -137,10 +138,18 @@ var game = {
         passaro.draw();
         moeda.draw();
         moeda2.draw();
+        moedaIco.draw();
+        moedaIco2.draw();
+        
     
-        missao_Label.draw_text("Missão:",20, "Arial", 0, 30, "black");
-        missao_texto.draw_text("",30, "Arial", 10, 80, "black");
-        score_texto.draw_text("Placar ",30, "Arial", 340, 80, "black");
+        missao_Label.draw_text("Missão:",25, "Arial Bold",10, 30, "black");
+        missao_texto.draw_text("",30, "Arial Bold", 30, 90, "black");
+        score_texto.draw_text("Placar ",30, "Arial Bold", 380, 90, "black");
+
+        moeda_Label.draw_text("= 1",30, "Arial Bold",50, 785, "black");
+        moeda_Label2.draw_text("= 0",30, "Arial Bold",50, 860, "black");
+
+
     
     },
     update() {
@@ -167,7 +176,7 @@ var game = {
             missao_texto.text = missaoAtual;
             score_texto.text = score;
     
-           colision();
+          // colision();
     
         }
     
