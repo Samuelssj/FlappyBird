@@ -109,9 +109,7 @@ function colision() {
         playSound(sombatercano);
         somfase.pause();
 
-        window.location.href = "http://127.0.0.1:5500/views/game.html";
-
-
+        window.location.href = "./game-over";
     }
 
 }

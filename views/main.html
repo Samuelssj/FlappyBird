@@ -108,12 +108,20 @@
         }
 
         const moveTo = (page) => {
-            console.log(page)
             window.location.href = `${page}.html`
         }
 
+        const goTohome = () => {
+            window.location.href = "./"
+        }
+
         const changeScreen = (page = "menu") => {
-            $("#container-menu").load(`components/${page}.html`);
+            
+            if (window.location.pathname === "/game-over"){
+                page = "game-over"
+            }
+
+            $("#container-menu").load(`../views/components/${page}.html`);
         }
 
         changeScreen();
