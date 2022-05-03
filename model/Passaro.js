@@ -1,9 +1,9 @@
 class Passaro extends Obj{
-    vel = 1.5
+    vel = 1
     grav = .5
 
     move(){
-        if(this.vel < 4.8){
+        if(this.vel < 4){
             this.vel += this.grav;
         } 
         this.y += this.vel;
