@@ -176,7 +176,7 @@ var game = {
             missao_texto.text = missaoAtual;
             score_texto.text = score;
     
-          // colision();
+            colision();
     
         }
     
