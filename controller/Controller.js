@@ -1,4 +1,5 @@
 var canvas = document.getElementById('canvas').getContext("2d");
+//canvas.imageSmoothingEnable = false;
 const soundSettings = getOrCreate("flappy-bird-sound", true)
 // Vai ser usado para configuração de level
 const levelSettings = getOrCreate("flappy-bird-level", "1")

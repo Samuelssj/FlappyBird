@@ -17,6 +17,7 @@ var passaro = new Passaro(50, 400, 30, 35, "../assets/bird0.png")
 var moeda = new Moeda(Math.random() * (645 - 520), Math.random() * (645 - 45), 45, 65, "../assets/true0.png");
 var moeda2 = new Moeda(Math.random() * (645 - 45), Math.random() * (645 - 45), 45, 65, "../assets/false0.png");
 
+
 var moedaResposta = 0;
 var respostaMissao = missaoResposta;
 var score = 0;
@@ -34,22 +35,48 @@ var sombatercano = new Audio("../assets/UhOh.mp3");
 var gamerover = new Texto();
 
 function resposta(){
+    let sucesso = false;
 
-    if(moedaResposta === missaoResposta){
-        score += 1;
-        playSound(somcoin);
-        criarmissao();
-        respostaMissao = missaoResposta;
-        missaoAtual = missaoNome;
-    }else{
-        if(score > 0){
-            score -= 1;
+    for (const tiporesposta of missaoResposta) {
+        if(moedaResposta == tiporesposta){
+            score += 1;
+                playSound(somcoin);
+                criarmissao();
+                respostaMissao = missaoResposta;
+                missaoAtual = missaoNome;
+                sucesso = true;
         }
-        playSound(sombatercano)
-        // criarmissao();
-        // respostaMissao = missaoResposta;
-        // missaoAtual = missaoNome;
+
     }
+    if(!sucesso){
+        if(score> 0){
+                    score -= 1;
+                }
+                playSound(sombatercano)
+                criarmissao();
+                 respostaMissao = missaoResposta;
+                 missaoAtual = missaoNome;
+    }
+
+ 
+
+
+
+    // if(moedaResposta === missaoResposta){
+    //     score += 1;
+    //     playSound(somcoin);
+    //     criarmissao();
+    //     respostaMissao = missaoResposta;
+    //     missaoAtual = missaoNome;
+    // }else{
+    //     if(score> 0){
+    //         score -= 1;
+    //     }
+    //     playSound(sombatercano)
+    //     // criarmissao();
+    //     // respostaMissao = missaoResposta;
+    //     // missaoAtual = missaoNome;
+    // }
 
 
 }
@@ -81,68 +108,85 @@ function colision() {
         playSound(sombatercano);
         somfase.pause();
 
+        window.location.href = "http://127.0.0.1:5500/views/main.html";
+
+
     }
 
 }
 
-function draw() {
+var currentScene ={};
 
-    fundo.draw();
-    fundo2.draw();
+function changeScene(scene){
+    currentScene = scene;
+}
 
-    cano1.draw();
-    cano2.draw();
+var game = {
 
-    chao.draw();
-    chao2.draw();
+    draw() {
 
-    passaro.draw();
-    moeda.draw();
-    moeda2.draw();
-
-    missao_Label.draw_text("Missão:",20, "Arial", 0, 30, "black");
-    missao_texto.draw_text("",30, "Arial", 10, 80, "black");
-    score_texto.draw_text("Placar ",30, "Arial", 340, 80, "black");
+        fundo.draw();
+        fundo2.draw();
+    
+        cano1.draw();
+        cano2.draw();
+    
+        chao.draw();
+        chao2.draw();
+    
+        passaro.draw();
+        moeda.draw();
+        moeda2.draw();
+    
+        missao_Label.draw_text("Missão:",20, "Arial", 0, 30, "black");
+        missao_texto.draw_text("",30, "Arial", 10, 80, "black");
+        score_texto.draw_text("Placar ",30, "Arial", 340, 80, "black");
+    
+    },
+    update() {
+        if (play) {
+    
+            fundo.move(1, -500, 0);
+            fundo2.move(1, 0, 500);
+            playSound(somfase)
+            chao.move(2, -500, 0);
+            chao2.move(2, 0, 500);
+    
+            passaro.move();
+            passaro.limiteVoo();
+            passaro.animation("bird", 4, 8);
+    
+            cano1.move(3, -100, 600, cano2);
+    
+            moeda.move(cano1);
+            moeda.animation("true", 6, 8);
+    
+            moeda2.move(cano1);
+            moeda2.animation("false", 6, 8);
+    
+            missao_texto.text = missaoAtual;
+            score_texto.text = score;
+    
+           colision();
+    
+        }
+    
+    
+    },
 
 }
 
-function update() {
-    if (play) {
-
-        fundo.move(1, -500, 0);
-        fundo2.move(1, 0, 500);
-        playSound(somfase)
-        chao.move(2, -500, 0);
-        chao2.move(2, 0, 500);
-
-        passaro.move();
-        passaro.limiteVoo();
-        passaro.animation("bird", 4, 8);
-
-        cano1.move(3, -100, 600, cano2);
-
-        moeda.move(cano1);
-        moeda.animation("true", 6, 8);
-
-        moeda2.move(cano1);
-        moeda2.animation("false", 6, 8);
-
-        missao_texto.text = missaoAtual;
-        score_texto.text = score;
-
-       colision();
-
-    }
 
 
-}
+
+
 
 function main() {
     canvas.clearRect(0, 0, 500, 900);
-    draw();
-    update();
+    currentScene.draw();
+    currentScene.update();
     requestAnimationFrame(main);
 
 }
-
+changeScene(game);
 main(); 
