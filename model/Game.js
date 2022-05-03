@@ -12,10 +12,10 @@ var chao2 = new Chao(500, 700, 500, 200, "../assets/ground.png")
 var cano1 = new Cano(500, 500, 60, 358, "../assets/pipe1.png");
 var cano2 = new Cano(500, 0, 60, 358, "../assets/pipe2.png");
 
-var passaro = new Passaro(50, 400, 30, 35, "../assets/bird0.png")
+var passaro = new Passaro(0, 520, 30, 35, "../assets/bird0.png")
 
-var moeda = new Moeda(Math.random() * (645 - 520), Math.random() * (645 - 45), 45, 65, "../assets/true0.png");
-var moeda2 = new Moeda(Math.random() * (645 - 45), Math.random() * (645 - 45), 45, 65, "../assets/false0.png");
+var moeda = new Moeda(Math.random() * (520 - 50), Math.random() * (645 - 45), 45, 65, "../assets/true0.png");
+var moeda2 = new Moeda(Math.random() * (520 - 50), Math.random() * (645 - 45), 45, 65, "../assets/false0.png");
 
 var moedaIco = new Moeda(0,750, 50, 50, "../assets/true2.png");
 var moedaIco2 = new Moeda(0,830, 50, 50, "../assets/false2.png");
@@ -36,6 +36,7 @@ var somFly = new Audio("../assets/wing.ogg");
 var somcoin = new Audio("../assets/point.ogg");
 var somfase = new Audio("../assets/Bubble.mp3");
 var sombatercano = new Audio("../assets/UhOh.mp3");
+//var birdColision = new Audio("../assets/BirdColision.mp3");
 var gamerover = new Texto();
 
 function resposta(){
@@ -105,9 +106,9 @@ function colision() {
 
 
     if (passaro.Collide(cano1) || passaro.Collide(cano2)) {
-        play = false;
-        playSound(sombatercano);
+        //playSound(birdColision);
         somfase.pause();
+        play = false;
 
         window.location.href = "./game-over";
     }
@@ -140,12 +141,12 @@ var game = {
         moedaIco2.draw();
         
     
-        missao_Label.draw_text("Missão:",25, "Arial Bold",10, 30, "black");
+        missao_Label.draw_text("Missão:",25, "Arial Bold",10, 50, "black");
         missao_texto.draw_text("",30, "Arial Bold", 30, 90, "black");
         score_texto.draw_text("Placar ",30, "Arial Bold", 380, 90, "black");
 
-        moeda_Label.draw_text("= 1",30, "Arial Bold",50, 785, "black");
-        moeda_Label2.draw_text("= 0",30, "Arial Bold",50, 860, "black");
+        moeda_Label.draw_text("➔ 1 ➔ Verdadeiro",30, "Arial Bold",50, 785, "black");
+        moeda_Label2.draw_text("➔ 0 ➔ Falso",30, "Arial Bold",50, 860, "black");
 
 
     
@@ -174,7 +175,7 @@ var game = {
             missao_texto.text = missaoAtual;
             score_texto.text = score;
     
-            colision();
+           colision();
     
         }
     

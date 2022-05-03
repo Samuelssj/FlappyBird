@@ -15,7 +15,7 @@ class Moeda extends Obj{
 
         this.x -=4;
 
-        if(this.x < -40){
+        if(this.x < Math.random() * (-60 - -40)){
             this.set_visible = true;
             this.x = 520;
             this.y = Math.random() * (645 - 45);
