@@ -1,17 +1,22 @@
-<h1 style="color: white; text-align: center;">
-    Game Over
-</h1>
+<h1 style="color: white; text-align: center">Game Over</h1>
 
-<h4 style="color: white; text-align: center;">
-    Video-Tutorial de ajuda no link a seguir:
-</h4>
+<h4 style="color: black; text-align: center">Tentar Novamente?</h4>
 
-<h6 style="color: white; text-align: center;">
-    <a class="text-black" href="https://www.youtube.com" target="_blank">https://www.youtube.com</a>
+<h6 style="color: white; text-align: center">
+  <div
+    id="container-button"
+    class="d-flex justify-content-center align-items-center"
+    onclick="window.location.href = `./flappy-bird`"
+  >
+    <label>Sim</label>
+    <input src="../assets/ui/Button18.png" type="image" />
+  </div>
+  <div
+    id="container-button"
+    class="d-flex justify-content-center align-items-center"
+    onclick="goTohome()"
+  >
+    <label>Não</label>
+    <input src="../assets/ui/Button17.png" type="image" />
+  </div>
 </h6>
-
-
-<div id="container-button" class="d-flex justify-content-center align-items-center" onclick="goTohome()">
-    <label>Voltar</label>
-    <input src="../assets/ui/Button17.png" type="image">
-</div>

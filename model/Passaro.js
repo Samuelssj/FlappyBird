@@ -1,6 +1,6 @@
 class Passaro extends Obj{
     vel = 2
-    grav = 1
+    grav = .5
 
     move(){
         if(this.vel < 6){
