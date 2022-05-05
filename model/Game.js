@@ -14,11 +14,11 @@ var cano2 = new Cano(500, 0, 60, 358, "../assets/pipe2.png");
 
 var passaro = new Passaro(0, 520, 30, 35, "../assets/bird0.png")
 
-var moeda = new Moeda(Math.random() * (520 - 50), Math.random() * (645 - 45), 45, 65, "../assets/true0.png");
-var moeda2 = new Moeda(Math.random() * (520 - 50), Math.random() * (645 - 45), 45, 65, "../assets/false0.png");
+var moeda = new Moeda(Math.random() * (520 - 50), Math.random() * (645 - 45), 35, 70, "../assets/true0.png");
+var moeda2 = new Moeda(Math.random() * (520 - 50), Math.random() * (645 - 45), 35, 70, "../assets/false0.png");
 
-var moedaIco = new Moeda(0,750, 50, 50, "../assets/true2.png");
-var moedaIco2 = new Moeda(0,810, 50, 50, "../assets/false2.png");
+var moedaIco = new Moeda(0,750, 50, 50, "../assets/true0.png");
+var moedaIco2 = new Moeda(0,810, 50, 50, "../assets/false0.png");
 var moeda_Label = new Texto();
 var moeda_Label2 = new Texto();
 
@@ -107,8 +107,8 @@ function colision() {
 
     if (passaro.Collide(cano1) || passaro.Collide(cano2)) {
         //playSound(birdColision);
-        somfase.pause();
         play = false;
+        somfase.pause();
 
         window.location.href = "./game-over";
     }
@@ -167,15 +167,15 @@ var game = {
             cano1.move(3, -100, 600, cano2);
     
             moeda.move(cano1);
-            moeda.animation("true", 6, 8);
+            moeda.animation("true", 0, 10);
     
             moeda2.move(cano1);
-            moeda2.animation("false", 6, 8);
+            moeda2.animation("false", 0, 8);
     
             missao_texto.text = missaoAtual;
             score_texto.text = score;
     
-            colision();
+           // colision();
     
         }
     
