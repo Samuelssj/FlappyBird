@@ -22,12 +22,12 @@ const missoes = [
     },
     missao04 ={
         //condicional
-        pergunta : "1 ->⬜= Falso" ,
+        pergunta : "1 ➔⬜= Falso" ,
         resposta : [0]
     },
     missao05 ={
         //condicional
-        pergunta : "1 ->⬜ = Verdadeiro" ,
+        pergunta : "1 ➔⬜ = Verdadeiro" ,
         resposta : [1]
     },
     missao06 ={
