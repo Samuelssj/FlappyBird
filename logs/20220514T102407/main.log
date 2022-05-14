@@ -1,0 +1,8 @@
+[2022-05-14 10:24:07.685] [main] [info] window#load: attempt to load window (id: 1)
+[2022-05-14 10:24:07.759] [main] [info] update#setState idle
+[2022-05-14 10:24:07.866] [main] [info] ExtensionHostStarterWorker created
+[2022-05-14 10:24:10.921] [main] [info] window#load: window reported ready (id: 1)
+[2022-05-14 10:24:12.113] [main] [info] Starting extension host with pid 12247 (fork() took 72 ms).
+[2022-05-14 10:24:12.120] [main] [info] ExtensionHostStarterWorker.start() took 96 ms.
+[2022-05-14 10:24:33.329] [main] [info] Waiting for extension host with pid 12247 to exit.
+[2022-05-14 10:24:33.386] [main] [info] Extension host with pid 12247 exited with code: 0, signal: null.
