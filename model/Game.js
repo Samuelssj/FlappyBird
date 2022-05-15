@@ -14,11 +14,11 @@ var cano2 = new Cano(700, 0, 60, 358, "../assets/pipe2.png");
 
 var passaro = new Passaro(0, 520, 30, 35, "../assets/bird0.png")
 
-var moeda = new Moeda(750, Math.random() * (645 - 45), 35, 70, "../assets/true0.png");
-var moeda2 = new Moeda(Math.random() * (720 - 500), Math.random() * (645 - 45), 35, 70, "../assets/false0.png");
+var moeda = new Moeda( Math.random() * (800 - 700) + 735, Math.random() * (645 - 45), 35, 70, "../assets/true0.png");
+var moeda2 = new Moeda(Math.random() * (800 - 700) + 700, Math.random() * (645 - 45), 35, 70, "../assets/false0.png");
 
-var moedaIco = new Moeda(0, 750, 50, 50, "../assets/true0.png");
-var moedaIco2 = new Moeda(0, 810, 50, 50, "../assets/false0.png");
+var moedaIco = new Moeda(5, 740, 35, 70, "../assets/true0.png");
+var moedaIco2 = new Moeda(5, 810, 35, 70, "../assets/false0.png");
 var moeda_Label = new Texto();
 var moeda_Label2 = new Texto();
 
@@ -140,13 +140,15 @@ var game = {
         moedaIco.draw();
         moedaIco2.draw();
 
+//         font-family: 'Bakbak One', cursive;
+// font-family: 'Roboto Mono', monospace;
 
-        missao_Label.draw_text("Missão:", 25, "Arial Bold", 10, 50, "black");
-        missao_texto.draw_text("", 30, "Arial Bold", 30, 90, "black");
-        score_texto.draw_text("Placar ", 30, "Arial Bold", 380, 90, "black");
+        missao_Label.draw_text("Missão:", 20, "Roboto Mono", 10, 40, "white");
+        missao_texto.draw_text("", 30, "Roboto Mono", 10, 100, "black");
+        score_texto.draw_text("Placar ", 20, "Roboto Mono", 380, 40, "black");
 
-        moeda_Label.draw_text("➔ 1 ➔ Verdadeiro", 30, "Arial Bold", 50, 785, "black");
-        moeda_Label2.draw_text("➔ 0 ➔ Falso", 30, "Arial Bold", 50, 845, "black");
+        moeda_Label.draw_text("➔ 1 ➔ Verdadeiro", 25, "Roboto Mono", 40, 785, "black");
+        moeda_Label2.draw_text("➔ 0 ➔ Falso", 25, "Roboto Mono", 40, 850, "black");
 
 
 
@@ -175,7 +177,7 @@ var game = {
             missao_texto.text = missaoAtual;
             score_texto.text = score;
 
-            // colision();
+           //colision();
 
         }
 
