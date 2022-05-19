@@ -140,8 +140,8 @@ var game = {
         moedaIco.draw();
         moedaIco2.draw();
 
-//         font-family: 'Bakbak One', cursive;
-// font-family: 'Roboto Mono', monospace;
+    // font-family: 'Bakbak One', cursive;
+    // font-family: 'Roboto Mono', monospace;
 
         missao_Label.draw_text("Missão:", 20, "Roboto Mono", 10, 40, "white");
         missao_texto.draw_text("", 30, "Roboto Mono", 10, 100, "black");
@@ -177,7 +177,7 @@ var game = {
             missao_texto.text = missaoAtual;
             score_texto.text = score;
 
-           //colision();
+           colision();
 
         }
 
