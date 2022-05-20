@@ -26,3 +26,4 @@ const playSound = (obj) => {
     obj.play()
   }
 }
+

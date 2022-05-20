@@ -14,8 +14,8 @@ var cano2 = new Cano(700, 0, 60, 358, "../assets/pipe2.png");
 
 var passaro = new Passaro(0, 520, 30, 35, "../assets/bird0.png")
 
-var moeda = new Moeda( Math.random() * (800 - 700) + 735, Math.random() * (645 - 45), 35, 70, "../assets/true0.png");
-var moeda2 = new Moeda(Math.random() * (800 - 700) + 700, Math.random() * (645 - 45), 35, 70, "../assets/false0.png");
+var moeda = new Moeda( Math.random() * (1400 - 700) + 735, Math.random() * (645 - 45), 35, 70, "../assets/true0.png");
+var moeda2 = new Moeda(Math.random() * (1500 - 700) + 700, Math.random() * (645 - 45), 35, 70, "../assets/false0.png");
 
 var moedaIco = new Moeda(5, 740, 35, 70, "../assets/true0.png");
 var moedaIco2 = new Moeda(5, 810, 35, 70, "../assets/false0.png");
@@ -143,9 +143,9 @@ var game = {
     // font-family: 'Bakbak One', cursive;
     // font-family: 'Roboto Mono', monospace;
 
-        missao_Label.draw_text("Missão:", 20, "Roboto Mono", 10, 40, "white");
+        missao_Label.draw_text("Missão:", 20, "Roboto Mono", 10, 60, "white");
         missao_texto.draw_text("", 30, "Roboto Mono", 10, 100, "black");
-        score_texto.draw_text("Placar ", 20, "Roboto Mono", 380, 40, "black");
+        score_texto.draw_text("Placar ", 20, "Roboto Mono", 380, 60, "black");
 
         moeda_Label.draw_text("➔ 1 ➔ Verdadeiro", 25, "Roboto Mono", 40, 785, "black");
         moeda_Label2.draw_text("➔ 0 ➔ Falso", 25, "Roboto Mono", 40, 850, "black");
@@ -158,7 +158,7 @@ var game = {
 
             fundo.move(1, -500, 0);
             fundo2.move(1, 0, 500);
-            playSound(somfase)
+            playSound(somfase);
             chao.move(2, -500, 0);
             chao2.move(2, 0, 500);
 

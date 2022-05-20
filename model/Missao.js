@@ -69,8 +69,8 @@ function criarmissao(){
     const indexMissao = parseInt(Math.random() * missoes.length) 
     missaoNome = missoes[indexMissao].pergunta;
     missaoResposta = missoes[indexMissao].resposta;
-    console.log(missaoNome);
-    console.log(missaoResposta);
+   // console.log(missaoNome);
+   // console.log(missaoResposta);
 
     
 }
