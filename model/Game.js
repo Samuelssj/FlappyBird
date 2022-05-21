@@ -15,7 +15,7 @@ var cano2 = new Cano(700, 0, 60, 358, "../assets/pipe2.png");
 var passaro = new Passaro(0, 520, 30, 35, "../assets/bird0.png")
 
 var moeda = new Moeda( Math.random() * (1400 - 700) + 735, Math.random() * (645 - 45), 35, 70, "../assets/true0.png");
-var moeda2 = new Moeda(Math.random() * (1500 - 700) + 700, Math.random() * (645 - 45), 35, 70, "../assets/false0.png");
+var moeda2 = new Moeda(Math.random() * (1400 - 700) + 735, Math.random() * (645 - 45), 35, 70, "../assets/false0.png");
 
 var moedaIco = new Moeda(5, 740, 35, 70, "../assets/true0.png");
 var moedaIco2 = new Moeda(5, 810, 35, 70, "../assets/false0.png");
